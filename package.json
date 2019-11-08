@@ -1,0 +1,16 @@
+{
+  "name": "tuto-gql",
+  "version": "1.0.0",
+  "description": "https://www.prisma.io/docs/tutorials/setup-prisma/create-new-db/postgres-eiyov7erah#step-1:-install-docker",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "graphql": "^14.5.8",
+    "prisma-client-lib": "^1.34.10"
+  }
+}

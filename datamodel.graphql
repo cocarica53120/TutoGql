@@ -1,0 +1,18 @@
+type User{
+  id: ID! @id
+  name: String!
+  age: Int
+  updatedAt: DateTime! @updatedAt
+  createdAt: DateTime! @createdAt
+  address: Address
+}
+
+
+type Address{
+  id: ID! @id
+  city: String!
+  postCode: String!
+  updatedAt: DateTime! @updatedAt
+  createdAt: DateTime! @createdAt
+  user: User @relation(link: INLINE)
+}

@@ -1,0 +1,70 @@
+## LISTING
+
+query listUsers {
+  users {
+    id
+    name
+    age
+  }
+}
+
+## CREATING
+
+mutation createOneUser {createUser(data: {name: "toto"}) {
+  id
+  name
+}}
+
+
+## DELETING
+
+mutation deleteOneUser {
+  deleteUser(where: { id: "ck1d89ap700890659pce7elxu" }) {
+    id
+    name
+  }
+}
+
+
+## UPDATING
+
+mutation updateUser($age: UserUpdateInput!) {
+  updateUser(data: $age, where: { id: "cjhyl2dt9000d0759ddak7gz2" }) {
+    id
+    name
+    age
+  }
+}
+With Variables =>
+{"age": {"name": "titi", "age": 40}}
+
+
+## FILTERING
+
+query filterUsersByAge {
+  users(where: { age_gt: 39 }) {
+    id
+    name
+    age
+  }
+}
+
+query filterUsersByAgeNull {
+  users(where: { age: null }) {
+    id
+    name
+    age
+  }
+}
+
+query filterUsers($filter: UserWhereInput) {
+  users(where: $filter) {
+    id
+    name
+    age
+  }
+}
+
+For the last one => Variable examples :
+{"filter": {"age" : null}}
+{"filter": {"OR": {"age_gt" : 20, "name":  "titi" }}}

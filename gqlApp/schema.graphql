@@ -1,0 +1,21 @@
+type Query {
+    users: [User!]!
+    user(userId: ID!): User
+    userByName(userName: String!): [User]
+}
+
+
+type User{
+  id: ID!
+  name: String!
+  age: Int
+  address: Address
+}
+
+
+type Address{
+  id: ID!
+  city: String!
+  postCode: String!
+  user: User
+}
